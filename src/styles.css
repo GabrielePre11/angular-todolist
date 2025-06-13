@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  /*============ Colors ============*/
+  --color-bg: #333446;
+  --color-white: #eaefef;
+
+  /*============ Fonts ============*/
+  --font-primary: "DM Sans", sans-serif;
+  --font-secondary: "Edu NSW ACT Cursive", cursive;
+}
+
+/*============ RESET ============*/
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a,
+img,
+span {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*============ UTILITY ============*/
+.container {
+  @apply max-w-4xl mx-auto px-4;
+}
+
+/*============ SCROLLBAR ============*/
+::-webkit-scrollbar {
+  @apply w-2.5;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-red-500;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800;
+}

@@ -1,0 +1,94 @@
+<section class="py-10" id="todo-list" aria-label="todo-list">
+  <div class="container">
+    <!--============ INPUT WRAPPER ============-->
+    <div class="flex flex-col md:flex-row items-center rounded-lg gap-2">
+      <!--============ INPUT ============-->
+      <input
+        type="text"
+        placeholder="Prepare for interviews..."
+        class="w-full py-3 px-4 text-lg outline-0 bg-white text-slate-900 rounded-xl"
+        [(ngModel)]="userTask"
+        (keydown.enter)="addTask()"
+      />
+      <!--============ BUTTON ============-->
+      <button
+        class="inline-flex justify-center bg-slate-800 text-white w-full md:w-max mt-2 md:mt-0 py-3.5 px-8 rounded-xl text-lg transition-colors duration-300 hover:bg-slate-900"
+        aria-label="Insert new task"
+        (click)="addTask()"
+      >
+        Done
+      </button>
+    </div>
+
+    <!--============ FILTERS & COUNTERS ============-->
+    <div class="mt-5 flex flex-wrap items-center justify-between gap-5">
+      <!--============ FILTERS ============-->
+      <div class="flex flex-wrap items-center justify-between gap-3.5">
+        <!-- All Tasks Filter -->
+        <button
+          class="flex items-center bg-slate-800 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-slate-900 border"
+          [class]="activeCategory === 'All' ? 'border border-green-500' : 'border-transparent'"
+          (click)="activeCategory = 'All'"
+        >
+          <h3>All Tasks</h3>
+        </button>
+
+        <!-- Completed Tasks Filter -->
+        <button
+          class="flex items-center bg-slate-800 px-4 py-2 rounded-lg gap-2 transition-all duration-200 hover:bg-slate-900 border"
+          [class]="activeCategory === 'Completed' ? 'border border-green-500' : 'border-transparent'"
+          (click)="activeCategory = 'Completed'"
+        >
+          <h3>Completed ✅</h3>
+        </button>
+      </div>
+
+      <!--============ COUNTERS ============-->
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center bg-slate-800 px-4 py-2 rounded-lg gap-2">
+          <!-- Tasks -->
+          <h3>Tasks:</h3>
+          <span class="text-lg font-secondary text-red-500"
+            >{{tasks.length}}</span
+          >
+        </div>
+
+        <!-- Completed Tasks Counter -->
+        <div class="flex items-center bg-slate-800 px-4 py-2 rounded-lg gap-2">
+          <h3>Completed Tasks:</h3>
+          <span class="text-lg font-secondary text-red-500"
+            >{{completedTasks}}</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!--============ TASKS LIST ============-->
+    @if (tasks.length < 1 && activeCategory === 'All') {
+    <p class="flex items-center place-content-center mt-32 sm:text-lg gap-1">
+      There are no tasks yet! Add a new one!
+      <span class="animate-bounce duration-300"> ☝🏼 </span>
+    </p>
+    } @else if(!completedTasks && activeCategory === 'Completed'){
+    <p class="flex items-center place-content-center mt-32 sm:text-lg gap-1">
+      There are no completed tasks yet! Add a new one and complete it!
+      <span class="animate-bounce duration-300"> ☝🏼 </span>
+    </p>
+    }
+
+    <ul class="grid mt-8 space-y-2">
+      @for (task of filteredTasks; track task.id) {
+      <li>
+        <!--============ TODO-ITEM @COMPONENT ============-->
+        <app-todo-item
+          [taskId]="task.id"
+          [userTask]="task.label"
+          [isCompleted]="task.isCompleted"
+          (complete)="completeTask($event)"
+          (remove)="removeTask($event)"
+        ></app-todo-item>
+      </li>
+      }
+    </ul>
+  </div>
+</section>

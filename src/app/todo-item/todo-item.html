@@ -1,0 +1,28 @@
+<li
+  class="flex items-center justify-between p-3 rounded-xl text-lg cursor-pointer transition-colors duration-200"
+  [class]="isCompleted ? 'bg-green-500 hover:bg-green-600' : 'bg-slate-800 hover:bg-slate-900'"
+  (click)="onCompleteTask()"
+>
+  <!--============ CHECK TASK & TEXT ============-->
+  <div class="flex items-center gap-3">
+    <!--============ CHECK TASK ICON ============-->
+    <button
+      class="grid place-items-center justify-center text-3xl shrink-0"
+      aria-label="Complete task"
+    >
+      <ng-icon name="heroCheckBadgeSolid"></ng-icon>
+    </button>
+
+    <!--============ TASK LABEL ============-->
+    <p [class]="isCompleted ? 'line-through' : ''">{{userTask}}</p>
+  </div>
+
+  <!--============ REMOVE TASK ============-->
+  <button
+    class="grid place-items-center justify-center text-3xl shrink-0"
+    aria-label="Remove task"
+    (click)="onRemoveTask()"
+  >
+    <ng-icon name="heroTrashSolid"></ng-icon>
+  </button>
+</li>
