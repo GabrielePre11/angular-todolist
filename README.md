@@ -20,7 +20,7 @@ As first project in Angular (17+) I decided to build a simple and modern To-Do L
 
 ## 🛠 Functionalities
 
-➕ Add new tasks
-✅ Complete tasks
-❌ Remove tasks
-🔎 Filter taks
+- ➕ Add new tasks
+- ✅ Complete tasks
+- ❌ Remove tasks
+- 🔎 Filter taks
