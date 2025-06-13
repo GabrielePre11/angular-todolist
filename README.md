@@ -1,6 +1,6 @@
 # 📝 To-Do List in Angular
 
-As first project in Angular (17+) I decided to build a a simple and modern To-Do List to practice and master the fundamentals of the framework learnt in a Udemy course.
+As first project in Angular (17+) I decided to build a simple and modern To-Do List to practice and master the fundamentals of the framework learnt in a Udemy course.
 
 ---
 
@@ -20,7 +20,7 @@ As first project in Angular (17+) I decided to build a a simple and modern To-Do
 
 ## 🛠 Functionalities
 
-- Add new tasks
-- Complete tasks
-- Remove tasks
-- Filter taks
+➕ Add new tasks
+✅ Complete tasks
+❌ Remove tasks
+🔎 Filter taks
