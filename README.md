@@ -1,4 +1,4 @@
-# 📝 To-Do List in Vue 3
+# 📝 To-Do List in Angular
 
 As first project in Angular (17+) I decided to build a a simple and modern To-Do List to practice and master the fundamentals of the framework learnt in a Udemy course.
 
@@ -12,11 +12,9 @@ As first project in Angular (17+) I decided to build a a simple and modern To-Do
 - 💾 localStorage
 - ✨ TypeScript
 
-[![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=fff)](#)
-[![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)](#)
+[![Angular](https://img.shields.io/badge/Angular-%23DD0031.svg?logo=angular&logoColor=white)](#)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](#)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff)](#)
-
+[![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)](#)
 
 ---
 
